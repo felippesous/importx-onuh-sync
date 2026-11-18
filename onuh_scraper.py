@@ -197,7 +197,8 @@ def run():
                     elif isinstance(jl, dict) and jl.get("breadcrumb"): categoria = str(jl.get("breadcrumb"))[:50]
                     marca = next((m for m in MARCAS if m.lower() in nome.lower()), (nome.split()[0] if nome else ""))
                     sku = re.sub(r"\W+", "-", nome.lower())[:90]
-                    prod = {"sku": sku, "nome": nome, "marca": marca, "categoria": categoria, "preco_atacado": preco, "em_estoque": em_estoque, "foto": foto, "link_onuh": link, "atualizado_em": datetime.now().isoformat(), "fonte_preco": "json-ld" if offers.get("price") else "texto"}
+                    preco_final = round((preco or 0) + 30, 2) if preco else None
+                    prod = {"link_onuh": link, "sku": sku, "nome": nome, "marca": marca, "categoria": categoria, "preco_final": preco_final, "em_estoque": em_estoque, "foto": foto, "atualizado_em": datetime.now().isoformat()}
                     break
                 except Exception as e:
                     print(f"  Tentativa {tentativa+1} falhou {link}: {e}"); time.sleep(2, flush=True)
@@ -208,19 +209,20 @@ def run():
                 print(f"  Checkpoint {len(produtos)}/{len(links)} - último: {produtos[-1]['nome']} - R$ {produtos[-1]['preco_atacado']}", flush=True)
         browser.close()
     # TRAVA DE SEGURANÇA [2]: não sobrescreve se muitos preços vieram vazios (cookie expirado)
-    sem_preco = sum(1 for p in produtos if not p.get("preco_atacado"))
+    sem_preco = sum(1 for p in produtos if not p.get("preco_final"))
     print(f"\nTotal: {len(produtos)} | Sem preço: {sem_preco} ({round(sem_preco/max(1,len(produtos))*100,1)}%)", flush=True)
     if produtos and sem_preco / len(produtos) > 0.20:
         print("ABORTADO: mais de 20% sem preço - provável cookie expirado. Mantendo produtos.json antigo.", flush=True)
         PARTIAL.write_text(json.dumps(produtos, ensure_ascii=False, indent=2), encoding="utf-8")
         return
     print(f"Salvando produtos.json com {len(produtos)} produtos", flush=True)
-    OUT_JSON.write_text(json.dumps(produtos, ensure_ascii=False, indent=2), encoding="utf-8")
+    produtos_publico = [{k:v for k,v in pp.items() if k not in ("link_onuh",)} for pp in produtos]
+    OUT_JSON.write_text(json.dumps(produtos_publico, ensure_ascii=False, indent=2), encoding="utf-8")
     if PARTIAL.exists(): PARTIAL.unlink()
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f); w.writerow(["link","nome","preco_ontem","preco_hoje","variacao_R$","status"])
         for p in produtos:
-            old = antigos.get(p["link_onuh"], {}); po = old.get("preco_atacado"); pn = p["preco_atacado"]
+            old = antigos.get(p.get("link_onuh", p.get("sku")), {}); po = old.get("preco_final"); pn = p["preco_final"]
             var = round(pn-po,2) if po and pn else ""
             status = "NOVO" if not old else ("SUBIU" if isinstance(var,(int,float)) and var>0 else "CAIU" if isinstance(var,(int,float)) and var<0 else "IGUAL")
             w.writerow([p["link_onuh"], p["nome"], po, pn, var, status])
