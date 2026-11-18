@@ -1,4 +1,255 @@
-sku,nome,preco_ontem,preco_hoje,variacao_R$,variacao_%,status
-ver-detalhes,Ver detalhes,2.5,2.5,0.0,0.0,IGUAL
-esgotado,Esgotado,15.0,15.0,0.0,0.0,IGUAL
-lançamento,Lançamento,59.99,59.99,0.0,0.0,IGUAL
+link,nome,preco_ontem,preco_hoje,variacao_R$,status
+https://catalogo.onuh.com.br/produto/medicube-glow-vanilla-hair-body-250ml,Medicube Glow Vanilla Hair Body 250Ml,,139.99,,NOVO
+https://catalogo.onuh.com.br/produto/celimax-noni-starter-kit-calming-radiance,Celimax Noni Starter Kit Calming Radiance,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/jollyour-calming-mild-oil-to-foam-cleanser-150ml,Jollyour Calming Mild Oil To Foam Cleanser 150Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/lilyeve-grow-turn-exosome-brush-ampoule-100ml,Lilyeve Grow Turn Exosome Brush Ampoule 100Ml,,109.99,,NOVO
+https://catalogo.onuh.com.br/produto/sungboon-editor-active-marine-astaxanthin-serum-30ml,Sungboon Editor Active Marine Astaxanthin Serum 30Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/numbuzin-nad-retinol-volumex-eye-cream-10ml,Numbuzin Nad Retinol Volumex Eye Cream 10Ml,,119.99,,NOVO
+https://catalogo.onuh.com.br/produto/fino-premium-touch-hair-oil-serum-70ml,Fino Premium Touch Hair Oil Serum 70Ml,,99.99,,NOVO
+https://catalogo.onuh.com.br/produto/alluvi-labs-glow-copper-peptide-face-serum-30ml,Alluvi Labs Glow Copper Peptide Face Serum 30Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/ur-lifestar-premium-compressed-bath-towel-30x60cm-38467,Ur Lifestar Premium Compressed Bath Towel 30X60Cm,2.5,1500.0,1497.5,SUBIU
+https://catalogo.onuh.com.br/produto/medicube-age-r-booster-face-roller-head,Medicube Age R Booster Face Roller Head,,699.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-intense-edp-105ml,Armaf Club De Nuit Intense Edp 105Ml,,179.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-sabah-al-ward-edp-100ml,Al Wataniah Sabah Al Ward Edp 100Ml,,109.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-fakhar-silver-edp-100ml,Lattafa Fakhar Silver Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-asad-elixir-edp-100ml,Lattafa Asad Elixir Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-asad-bourbon-edp-100ml,Lattafa Asad Bourbon Edp 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-fakhar-rose-edp-100ml,Lattafa Fakhar Rose Edp 100Ml,,179.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-rasasi-hawas-black-edp-100ml,Al Rasasi Hawas Black Edp 100Ml,,219.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-asad-edp-100ml,Lattafa Asad Edp 100Ml,,164.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-liquid-brun-edp-100ml,French Avenue Liquid Brun Edp 100Ml,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-woman-edp-105ml,Armaf Club De Nuit Woman Edp 105Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-mishlah-edp-100ml-56592,Lattafa Mishlah Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-ameer-edp-100ml,Maison Asrar Ameer Edp 100Ml,,369.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-kiaana-vibes-edp-100ml,Afnan Kiaana Vibes Edp 100Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-crown-edp-80ml,Orientica Crown Edp 80Ml,,369.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-amnia-bloom-edp-100ml,Al Wataniah Amnia Bloom Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/parfums-de-marly-paris-haltane-edp-125ml,Parfums De Marly Paris Haltane Edp 125Ml,,1539.99,,NOVO
+https://catalogo.onuh.com.br/produto/l-affair-tasmin-le-blanc-edp-100ml,L Affair Tasmin Le Blanc Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/nishane-shem-extrait-50ml,Nishane Shem Extrait 50Ml,,1599.99,,NOVO
+https://catalogo.onuh.com.br/produto/initio-parfums-atomic-rose-edp-90ml,Initio Parfums Atomic Rose Edp 90Ml,,1449.0,,NOVO
+https://catalogo.onuh.com.br/produto/byredo-bal-dafrique-edp-50ml,Byredo Bal Dafrique Edp 50Ml,,1199.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-rasasi-hawas-gold-digger-edp-100ml,Al Rasasi Hawas Gold Digger Edp 100Ml,,299.99,,NOVO
+https://catalogo.onuh.com.br/produto/taif-al-emarat-taif-04-edp-75ml,Taif Al Emarat Taif 04 Edp 75Ml,,619.99,,NOVO
+https://catalogo.onuh.com.br/produto/gulf-orchid-nobilty-edp-100ml,Gulf Orchid Nobilty Edp 100Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/parfums-de-marly-layton-edp-125ml,Parfums De Marly Layton Edp 125Ml,,1499.99,,NOVO
+https://catalogo.onuh.com.br/produto/nishane-hacivat-extrait-de-parfum-100ml,Nishane Hacivat Extrait De Parfum 100Ml,,1199.99,,NOVO
+https://catalogo.onuh.com.br/produto/bidaya-maktub-la-vie-edp-100ml,Bidaya Maktub La Vie Edp 100Ml,,184.99,,NOVO
+https://catalogo.onuh.com.br/produto/stella-dustin-lumina-rose-edp-100ml,Stella Dustin Lumina Rose Edp 100Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-pride-london-the-city-of-contrast-edp-100ml,Lattafa Pride London The City Of Contrast Edp 100Ml,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-alhambra-delilah-blanc-edp-100ml,Maison Alhambra Delilah Blanc Edp 100Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-shc-i-saoud-alkaabi-edp-100ml,Armaf Shc I Saoud Alkaabi Edp 100Ml,,179.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-marmara-edp-100ml,French Avenue Marmara Edp 100Ml,,219.99,,NOVO
+https://catalogo.onuh.com.br/produto/paris-corner-fayora-edp-100ml,Paris Corner Fayora Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/rayhaan-dark-leather-edp-100ml,Rayhaan Dark Leather Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-flair-edp-100ml,Maison Asrar Flair Edp 100Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-historic-doria-edp-100ml,Afnan Historic Doria Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-revolt-uncaged-edo-100ml,Arabiyat Prestige Revolt Uncaged Edo 100Ml,,279.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-amber-rouge-edp-150ml,Orientica Amber Rouge Edp 150Ml,,439.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-watani-intense-edp-100ml,Al Wataniah Watani Intense Edp 100Ml,,99.99,,NOVO
+https://catalogo.onuh.com.br/produto/aurora-scents-pharaoh-edp-100ml,Aurora Scents Pharaoh Edp 100Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-rasasi-hawas-la-mer-edp-100ml,Al Rasasi Hawas La Mer Edp 100Ml,,319.99,,NOVO
+https://catalogo.onuh.com.br/produto/taif-al-emarat-taif-05-edp-75ml,Taif Al Emarat Taif 05 Edp 75Ml,,619.99,,NOVO
+https://catalogo.onuh.com.br/produto/gulf-orchid-old-fashioned-edp-100ml,Gulf Orchid Old Fashioned Edp 100Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/stella-dustin-lumina-withe-edp-100ml,Stella Dustin Lumina Withe Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-ameerat-al-arab-suger-crown-edp-100ml,Lattafa Ameerat Al Arab Suger Crown Edp 100Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-alhambra-athena-edp-100ml,Maison Alhambra Athena Edp 100Ml,,139.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-knight-checkmate-black-edp-100ml,Armaf Knight Checkmate Black Edp 100Ml,,219.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-nabatieh-edp-100ml,French Avenue Nabatieh Edp 100Ml,,239.99,,NOVO
+https://catalogo.onuh.com.br/produto/paris-corner-azm-edp-100ml,Paris Corner Azm Edp 100Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/rayhaan-jungle-vibe-edp-100ml-92311,Rayhaan Jungle Vibe Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-hikaya-edp-100ml,Maison Asrar Hikaya Edp 100Ml,,249.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-la-fleur-bouquet-edp-80ml,Afnan La Fleur Bouquet Edp 80Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-sugar-lemon-sorbet-edp-100ml,Arabiyat Sugar Lemon Sorbet Edp 100Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-exclusive-azure-fantasy-edp-80ml,Orientica Exclusive Azure Fantasy Edp 80Ml,,434.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-ameeri-edp-100ml,Al Wataniah Ameeri Edp 100Ml,,99.99,,NOVO
+https://catalogo.onuh.com.br/produto/aurora-scents-cherry-in-the-woods-edp-100ml,Aurora Scents Cherry In The Woods Edp 100Ml,,249.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-rasasi-hawas-majestic-edp-100ml,Al Rasasi Hawas Majestic Edp 100Ml,,299.99,,NOVO
+https://catalogo.onuh.com.br/produto/taif-al-emarat-taif-08-edp-75ml,Taif Al Emarat Taif 08 Edp 75Ml,,619.99,,NOVO
+https://catalogo.onuh.com.br/produto/gulf-orchid-rare-rose-edp-100ml,Gulf Orchid Rare Rose Edp 100Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/stella-dustin-ouro-love-fuchsia-edp-100ml,Stella Dustin Ouro Love Fuchsia Edp 100Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-khamrah-waha-edp-100ml,Lattafa Khamrah Waha Edp 100Ml,,269.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-alhambra-chants-edp-100ml,Maison Alhambra Chants Edp 100Ml,,99.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-knight-checkmate-white-edp-100-ml,Armaf Knight Checkmate White Edp 100 Ml,,219.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-obsidian-edp-100ml,French Avenue Obsidian Edp 100Ml,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/paris-corner-voux-zingy-edp-100ml,Paris Corner Voux Zingy Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/rayhaan-valhalla-wave-edp-100ml,Rayhaan Valhalla Wave Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-yara-elixir-edp-100ml,Lattafa Yara Elixir Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-x-christian-provenzano-i-parfum-100ml,Armaf X Christian Provenzano I Parfum 100Ml,,319.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-firestorm-edp-100ml,French Avenue Firestorm Edp 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/rayhaan-elixir-edp-100ml,Rayhaan Elixir Edp 100Ml,,179.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-legacy-royal-collection-edp-100ml,Maison Asrar Legacy Royal Collection Edp 100Ml,,269.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-cotton-blush-edp-100ml,Arabiyat Prestige Cotton Blush Edp 100Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-rasasi-hawas-for-him-edp-100ml,Al Rasasi Hawas For Him Edp 100Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-nebras-elixir-edp-100ml,Lattafa Nebras Elixir Edp 100Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-x-christian-provenzano-ii-parfum-100ml,Armaf X Christian Provenzano Ii Parfum 100Ml,,329.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-veneno-scarlet-edp-100ml,French Avenue Veneno Scarlet Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-rey-edp-100ml,Maison Asrar Rey Edp 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-dulce-mango-affogato-edp-100ml,Arabiyat Prestige Dulce Mango Affogato Edp 100Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-atlas-edp-100ml,Lattafa Atlas Edp 100Ml,,139.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-bling-edp-100ml,Armaf Club De Nuit Bling Edp 100Ml,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-chaos-edp-100ml,French Avenue Chaos Edp 100Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-silver-elixir-edp-110ml,Maison Asrar Silver Elixir Edp 110Ml,,209.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-french-vanilla-latte-edp-100ml,Arabiyat Prestige French Vanilla Latte Edp 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-king-of-arabia-edp-100ml,Lattafa King Of Arabia Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-island-breeze-edp-100ml,Armaf Island Breeze Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-royal-blend-sequoia-edp-100ml,French Avenue Royal Blend Sequoia Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-vanilla-voyage-edp-110ml,Maison Asrar Vanilla Voyage Edp 110Ml,,319.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-kohl-luminous-edp-100ml,Arabiyat Prestige Kohl Luminous Edp 100Ml,,269.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-fire-on-ice-edp-100ml,Lattafa Fire On Ice Edp 100Ml,,119.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-scentasy-edp-100ml,Armaf Scentasy Edp 100Ml,,219.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-shmallow-fluff-edp-100ml,French Avenue Shmallow Fluff Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/maison-asrar-vison-edp-100ml,Maison Asrar Vison Edp 100Ml,,259.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-kohl-opulence-edp-100ml,Arabiyat Prestige Kohl Opulence Edp 100Ml,,269.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-habik-edp-100ml-feminino,Lattafa Habik Edp 100Ml Feminino,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-eter-desert-flower-edp-100ml,Armaf Eter Desert Flower Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-irida-edp-100ml,French Avenue Irida Edp 100Ml,,234.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-mahad-al-dhahab-edp-100ml,Arabiyat Prestige Mahad Al Dhahab Edp 100Ml,,319.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-petra-edp-100ml,Lattafa Petra Edp 100Ml,,139.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-odyssey-dubai-chocolat-edp-100ml,Armaf Odyssey Dubai Chocolat Edp 100Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-genesis-aquarius-edp-90ml,French Avenue Genesis Aquarius Edp 90Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/arabiyat-prestige-pecan-butter-cookie-edp-100ml,Arabiyat Prestige Pecan Butter Cookie Edp 100Ml,,269.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-fakhar-platin-edp-100ml,Lattafa Fakhar Platin Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-maleka-edp-105ml,Armaf Club De Nuit Maleka Edp 105Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-genesis-aries-edp-90ml,French Avenue Genesis Aries Edp 90Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-qaed-al-fursan-untamed-edp-90ml,Lattafa Qaed Al Fursan Untamed Edp 90Ml,,84.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-rose-oud-edp-100ml,Armaf Rose Oud Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-genesis-gemini-edp-90ml,French Avenue Genesis Gemini Edp 90Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-opulent-dubai-edp-100ml,Lattafa Opulent Dubai Edp 100Ml,,119.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-infinity-black-edp-100ml,Armaf Infinity Black Edp 100Ml,,269.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-genesis-leo-edp-90ml,French Avenue Genesis Leo Edp 90Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/lattafa-khamrah-dukhan-edp-100ml,Lattafa Khamrah Dukhan Edp 100Ml,,139.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-zero-pore-one-day-serum-30ml,Medicube Zero Pore One Day Serum 30Ml,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-zero-pore-pad-155g-70-pads,Medicube Zero Pore Pad 155G 70 Pads,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-pdrn-pink-collagen-exosome-shot-7500-30ml,Medicube Pdrn Pink Collagen Exosome Shot 7500 30Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-pdrn-pink-peptide-serum-30ml,Medicube Pdrn Pink Peptide Serum 30Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-deep-peptide-radiance-mask-27ml,Medicube Deep Peptide Radiance Mask 27Ml,,23.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-deep-vitamina-c-capsule-cream-55g,Medicube Deep Vitamina C Capsule Cream 55G,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-deep-vitamina-c-glutathione-cbrightening-mask-27ml,Medicube Deep Vitamina C Glutathione Cbrightening Mask 27Ml,,23.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-pdrn-pink-collagen-capsule-cream-55g,Medicube Pdrn Pink Collagen Capsule Cream 55G,,159.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-pdrn-pink-collagen-exosome-shot-2000-30ml,Medicube Pdrn Pink Collagen Exosome Shot 2000 30Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-red-foam-cleanser-120ml,Medicube Red Foam Cleanser 120Ml,,119.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-red-succinic-acid-serum-30ml,Medicube Red Succinic Acid Serum 30Ml,,119.99,,NOVO
+https://catalogo.onuh.com.br/produto/medicube-triple-hydrolyzed-collagen-cream-50ml,Medicube Triple Hydrolyzed Collagen Cream 50Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/celimax-oil-mattifying-sun-stick-for-combination-oily-skin-19g,Celimax Oil Mattifying Sun Stick For Combination Oily Skin 19G,,99.99,,NOVO
+https://catalogo.onuh.com.br/produto/celimax-retinol-shot-tightening-serum-for-firm-skin-30ml,Celimax Retinol Shot Tightening Serum For Firm Skin 30Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/jollyour-calming-sunscreen-spf-50-pa-50ml,Jollyour Calming Sunscreen Spf 50 Pa 50Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/jollyour-calming-yum-serum-50ml,Jollyour Calming Yum Serum 50Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/sungboon-editor-silk-peptide-intensive-eye-cream-30ml,Sungboon Editor Silk Peptide Intensive Eye Cream 30Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/numbuzin-nad-collagen-under-eye-patches-50-peptides,Numbuzin Nad Collagen Under Eye Patches 50 Peptides,,139.99,,NOVO
+https://catalogo.onuh.com.br/produto/isabelle-la-belle-perfume-capilar-royal-amber-60ml-94011,Isabelle La Belle Perfume Capilar Royal Amber 60Ml,,54.99,,NOVO
+https://catalogo.onuh.com.br/produto/ur-lifestar-portable-compressed-towel-24x30cm-kit-diario-14999,Ur Lifestar Portable Compressed Towel 24X30Cm Kit Diario,15.0,15.0,0.0,IGUAL
+https://catalogo.onuh.com.br/produto/al-wataniah-sabah-al-ward-body-splash-250ml,Al Wataniah Sabah Al Ward Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-shagaf-al-ward-body-splash-250ml,Al Wataniah Shagaf Al Ward Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-ameerati-body-splash-250ml,Al Wataniah Ameerati Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-attar-al-wesal-body-splash-250ml,Al Wataniah Attar Al Wesal Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-kenz-al-malik-body-splash-250ml,Al Wataniah Kenz Al Malik Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-najah-body-splash-250ml,Al Wataniah Najah Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-tibyan-body-splash-250ml,Al Wataniah Tibyan Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-watani-body-splash-250ml,Al Wataniah Watani Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/al-wataniah-zahra-body-splash-250ml,Al Wataniah Zahra Body Splash 250Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-amber-romance-250ml,Victorias Secret Body Splash Amber Romance 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-aqua-kiss-250ml,Victorias Secret Body Splash Aqua Kiss 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-bare-vanilla-250ml,Victorias Secret Body Splash Bare Vanilla 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-bare-vanilla-shimmer-250ml,Victorias Secret Body Splash Bare Vanilla Shimmer 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-love-spell-250ml,Victorias Secret Body Splash Love Spell 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-midnight-bloom-250ml,Victorias Secret Body Splash Midnight Bloom 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/victorias-secret-body-splash-pure-seduction-250ml,Victorias Secret Body Splash Pure Seduction 250Ml,,89.99,,NOVO
+https://catalogo.onuh.com.br/produto/britney-spears-fantasy-body-splash-236ml,Britney Spears Fantasy Body Splash 236Ml,,161.9,,NOVO
+https://catalogo.onuh.com.br/produto/britney-spears-midnight-fantasy-body-splash-236ml,Britney Spears Midnight Fantasy Body Splash 236Ml,,161.9,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-kit-miniaturas-10-x-5ml,Armaf Club De Nuit Kit Miniaturas 10 X 5Ml,,299.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-woman-kit-2-x-12ml,Armaf Club De Nuit Woman Kit 2 X 12Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/armaf-club-de-nuit-discovery-collection-kit-10-x-10ml,Armaf Club De Nuit Discovery Collection Kit 10 X 10Ml,,279.99,,NOVO
+https://catalogo.onuh.com.br/produto/isabelle-la-belle-kit-angel-20046,Isabelle La Belle Kit Angel,,109.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-aromatix-summer-vibes-kit-amarelo-edp-100ml,French Avenue Aromatix Summer Vibes Kit Amarelo Edp 100Ml,,349.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-aromatix-summer-vibes-kit-azul-edp-100ml,French Avenue Aromatix Summer Vibes Kit Azul Edp 100Ml,,349.99,,NOVO
+https://catalogo.onuh.com.br/produto/french-avenue-genesis-kit-30ml-x-12,French Avenue Genesis Kit 30Ml X,,849.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-collectors-kit-edition-edp-100ml,Afnan Collectors Kit Edition Edp 100Ml,,399.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-supremacy-not-only-intense-kit-3-unidades,Afnan Supremacy Not Only Intense Kit 3 Unidades,,289.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-supremacy-silver-kit-3-unidades,Afnan Supremacy Silver Kit 3 Unidades,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/afnan-turathi-blue-edp-90ml-kit-3-unidades,Afnan Turathi Blue Edp 90Ml Kit 3 Unidades,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-royal-amber-gift-set-4-itens,Orientica Royal Amber Gift Set 4 Itens,,409.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-royal-amber-gift-set,Orientica Royal Amber Gift Set,,449.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-royal-kit-miniaturas-5-x-7-5ml,Orientica Royal Kit Miniaturas 5 X 7 5Ml,,419.99,,NOVO
+https://catalogo.onuh.com.br/produto/orientica-royal-kit-miniaturas-5-x-7-5ml-com-caixa,Orientica Royal Kit Miniaturas 5 X 7 5Ml Com Caixa,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/dumont-borouj-collection-kit-8-x-10ml,Dumont Borouj Collection Kit 8 X 10Ml,,179.99,,NOVO
+https://catalogo.onuh.com.br/produto/bharara-viking-dubai-edp-100ml-kit-3-unidades,Bharara Viking Dubai Edp 100Ml Kit 3 Unidades,,699.0,,NOVO
+https://catalogo.onuh.com.br/produto/cacharel-amor-amor-edt-100ml-miniatura-30ml-kit,Cacharel Amor Amor Edt 100Ml Miniatura 30Ml Kit,,365.89,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-128-edp-25ml,Neeche Collection No 128 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-129-edp-25ml,Neeche Collection No 129 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-131-edp-25ml,Neeche Collection No 131 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-132-edp-25ml,Neeche Collection No 132 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-134-edp-25ml,Neeche Collection No 134 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-135-edp-25ml,Neeche Collection No 135 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-101-edp-25ml,Neeche Collection No 101 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-104-edp-25ml,Neeche Collection No 104 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-107-edp-25ml,Neeche Collection No 107 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-108-edp-25ml,Neeche Collection No 108 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-109-edp-25ml,Neeche Collection No 109 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-115-edp-25ml,Neeche Collection No 115 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-118-edp-25ml,Neeche Collection No 118 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-119-edp-25ml,Neeche Collection No 119 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-124-edp-25ml,Neeche Collection No 124 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-126-edp-25ml,Neeche Collection No 126 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-127-edp-25ml,Neeche Collection No 127 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-130-edp-25ml,Neeche Collection No 130 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-collection-no-133-edp-25ml,Neeche Collection No 133 Edp 25Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/neeche-house-kit-miniaturas-50ml-box-com-05,Neeche House Kit Miniaturas 50Ml Box Com,,249.99,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-creed-himalaya-edp-100ml,Openbox Creed Himalaya Edp 100Ml,,1349.99,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-parfums-de-marly-sedley-edp-125ml,Openbox Parfums De Marly Sedley Edp 125Ml,,1119.99,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-aisha-queen-edp-100ml,Openbox Bidaya Aisha Queen Edp 100Ml,,125.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-elliur-edp-100ml,Openbox Bidaya Elliur Edp 100Ml,,145.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-habibi-king-edp-100ml,Openbox Bidaya Habibi King Edp 100Ml,,135.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-habibi-prince-edp-100ml,Openbox Bidaya Habibi Prince Edp 100Ml,,135.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-maktub-gold-edp-100ml,Openbox Bidaya Maktub Gold Edp 100Ml,,140.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-maktub-la-vie-edp-100ml,Openbox Bidaya Maktub La Vie Edp 100Ml,,145.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-sex-on-the-rocks-edp-100ml,Openbox Bidaya Sex On The Rocks Edp 100Ml,,150.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-bidaya-blind-ecstasy-edp-100ml,Openbox Bidaya Blind Ecstasy Edp 100Ml,,160.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-dkhoon-al-emiratia-doha-sky-edp-100ml,Openbox Dkhoon Al Emiratia Doha Sky Edp 100Ml,,140.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-risala-blue-bomb-extreme-edp-100ml,Openbox Risala Blue Bomb Extreme Edp 100Ml,,80.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-amouage-outlands-edp-100ml,Openbox Amouage Outlands Edp 100Ml,,2249.99,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-mykonos-california-signature-edp-50ml,Openbox Mykonos California Signature Edp 50Ml,,85.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-mykonos-ispahan-extrait-de-parfum-50ml,Openbox Mykonos Ispahan Extrait De Parfum 50Ml,,85.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-mykonos-reflection-extrait-de-parfum-100ml,Openbox Mykonos Reflection Extrait De Parfum 100Ml,,130.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-mykonos-set1awanade-glitch-100ml,Openbox Mykonos Set1Awanade Glitch 100Ml,,130.0,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-sospiro-vibrato-edp-100ml,Openbox Sospiro Vibrato Edp 100Ml,,869.99,,NOVO
+https://catalogo.onuh.com.br/produto/openbox-goldfield-banks-pacific-rock-moss-edp-50ml,Openbox Goldfield Banks Pacific Rock Moss Edp 50Ml,,569.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-spider-man-edt-30ml,Marvel Spider Man Edt 30Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/disnep-frozen-shower-gel-shampoo-body-splash-200ml,Disnep Frozen Shower Gel Shampoo Body Splash 200Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/disney-barbie-shower-gel-shampoo-2em1-400ml,Disney Barbie Shower Gel Shampoo 2Em1 400Ml,,49.99,,NOVO
+https://catalogo.onuh.com.br/produto/disney-frozen-edt-100ml-vegan,Disney Frozen Edt 100Ml Vegan,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/hello-kitty-body-spray-200ml,Hello Kitty Body Spray 200Ml,,29.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-captain-america-body-spray-200ml,Marvel Captain America Body Spray 200Ml,,39.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-captain-america-edt-100ml,Marvel Captain America Edt 100Ml,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-iron-man-edt-100ml,Marvel Iron Man Edt 100Ml,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-spider-man-edt-100ml,Marvel Spider Man Edt 100Ml,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-spider-man-natural-spray,Marvel Spider Man Natural Spray,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-spider-man-natural-spray-1,Marvel Spider Man Natural Spray,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-captain-america-kit-edt-100ml-shower-gel-100ml,Marvel Captain America Kit Edt 100Ml Shower Gel 100Ml,,79.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-spider-man-kit-edt-50ml-flipper-selos,Marvel Spider Man Kit Edt 50Ml Flipper Selos,,99.99,,NOVO
+https://catalogo.onuh.com.br/produto/marvel-spider-man-kit-shampoo-400ml-spray-corporal-200ml,Marvel Spider Man Kit Shampoo 400Ml Spray Corporal 200Ml,,69.99,,NOVO
+https://catalogo.onuh.com.br/produto/tubbees-bubble-gum-edp-50ml,Tubbees Bubble Gum Edp 50Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/tubbees-chocolate-fudge-edp-50ml,Tubbees Chocolate Fudge Edp 50Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/tubbees-cookies-cream-edp-50ml,Tubbees Cookies Cream Edp 50Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/tubbees-cotton-candy-edp-50ml,Tubbees Cotton Candy Edp 50Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/tubbees-strawberry-cheesecake-edp-50ml,Tubbees Strawberry Cheesecake Edp 50Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/tubbees-unicorn-vanilla-edp-50ml,Tubbees Unicorn Vanilla Edp 50Ml,,129.99,,NOVO
+https://catalogo.onuh.com.br/produto/rochas-paris-man-edp-100ml,Rochas Paris Man Edp 100Ml,,259.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-amg-black-thrill-edp-100ml,Mercedes Benz Amg Black Thrill Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-amg-red-thrill-edp-100ml,Mercedes Benz Amg Red Thrill Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-amg-silver-thrill-edp-100ml,Mercedes Benz Amg Silver Thrill Edp 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-asl-air-edp-100ml,Mercedes Benz Asl Air Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-asl-land-edp-100ml,Mercedes Benz Asl Land Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-asl-sea-edp-100ml,Mercedes Benz Asl Sea Edp 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-club-black-edp-100ml,Mercedes Benz Club Black Edp 100Ml,,229.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-club-black-edt-100ml,Mercedes Benz Club Black Edt 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-club-for-men-edt-100ml,Mercedes Benz Club For Men Edt 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-man-edt-100ml,Mercedes Benz Man Edt 100Ml,,169.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-select-edt-100ml,Mercedes Benz Select Edt 100Ml,,199.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-select-night-edp-100ml,Mercedes Benz Select Night Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-sign-edp-100ml,Mercedes Benz Sign Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-sign-your-attitude-edt-100ml,Mercedes Benz Sign Your Attitude Edt 100Ml,,149.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-sign-your-power-edp-100ml,Mercedes Benz Sign Your Power Edp 100Ml,,189.99,,NOVO
+https://catalogo.onuh.com.br/produto/mercedes-benz-women-in-red-edp-60ml,Mercedes Benz Women In Red Edp 60Ml,,119.99,,NOVO
+https://catalogo.onuh.com.br/produto/ferrari-scuderia-black-edt-125ml,Ferrari Scuderia Black Edt 125Ml,,169.9,,NOVO
+https://catalogo.onuh.com.br/produto/tom-ford-ombre-leather-edp-100ml,Tom Ford Ombre Leather Edp 100Ml,,1399.99,,NOVO
