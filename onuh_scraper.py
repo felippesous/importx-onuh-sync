@@ -119,7 +119,7 @@ def run():
     if OUT_JSON.exists():
         try:
             for p in json.loads(OUT_JSON.read_text(encoding="utf-8")):
-                antigos[p.get("link_onuh")] = p
+                antigos[p.get("sku")] = p
         except: pass
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True)
@@ -206,7 +206,7 @@ def run():
                 produtos.append(prod); done[link] = prod
             if (len(produtos) % 100 == 0 and produtos):
                 PARTIAL.write_text(json.dumps(produtos, ensure_ascii=False, indent=2), encoding="utf-8")
-                print(f"  Checkpoint {len(produtos)}/{len(links)} - último: {produtos[-1]['nome']} - R$ {produtos[-1]['preco_atacado']}", flush=True)
+                print(f"  Checkpoint {len(produtos)}/{len(links)} - último: {produtos[-1]['nome']} - R$ {produtos[-1].get('preco_final')}", flush=True)
         browser.close()
     # TRAVA DE SEGURANÇA [2]: não sobrescreve se muitos preços vieram vazios (cookie expirado)
     sem_preco = sum(1 for p in produtos if not p.get("preco_final"))
@@ -222,7 +222,7 @@ def run():
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f); w.writerow(["link","nome","preco_ontem","preco_hoje","variacao_R$","status"])
         for p in produtos:
-            old = antigos.get(p.get("link_onuh", p.get("sku")), {}); po = old.get("preco_final"); pn = p["preco_final"]
+            old = antigos.get(p.get("sku"), {}); po = old.get("preco_final"); pn = p["preco_final"]
             var = round(pn-po,2) if po and pn else ""
             status = "NOVO" if not old else ("SUBIU" if isinstance(var,(int,float)) and var>0 else "CAIU" if isinstance(var,(int,float)) and var<0 else "IGUAL")
             w.writerow([p["link_onuh"], p["nome"], po, pn, var, status])
