@@ -17,6 +17,8 @@ jobs:
         env:
           ONUH_COOKIES_JSON: ${{ secrets.ONUH_COOKIES_JSON }}
         run: python onuh_scraper.py
+      - name: Validar JSON gerado
+        run: python validate.py data/produtos.json
       - name: Commitar produtos.json atualizado
         run: |
           git config user.name "importx-bot"
