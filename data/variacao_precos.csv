@@ -1,0 +1,4 @@
+sku,nome,preco_ontem,preco_hoje,variacao_R$,variacao_%,status
+ver-detalhes,Ver detalhes,,2.5,,,NOVO
+esgotado,Esgotado,,15.0,,,NOVO
+lançamento,Lançamento,,59.99,,,NOVO

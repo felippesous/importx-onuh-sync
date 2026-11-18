@@ -1,0 +1,35 @@
+[
+  {
+    "sku": "ver-detalhes",
+    "nome": "Ver detalhes",
+    "marca": "Ver",
+    "categoria": "mais-vendidos",
+    "preco_atacado": 2.5,
+    "em_estoque": true,
+    "foto": "/_next/image?url=https%3A%2F%2Fs3.amazonaws.com%2Ftiny-anexos-us%2Ferp%2FNzY0MDEwMjYz%2Fe20dfa9b0fca67fb74d6477d094d029c.png&w=540&q=75",
+    "link_onuh": "https://catalogo.onuh.com.br/produto/ur-lifestar-premium-compressed-bath-towel-30x60cm-38467",
+    "atualizado_em": "2026-11-18T12:29:34.661570"
+  },
+  {
+    "sku": "esgotado",
+    "nome": "Esgotado",
+    "marca": "Esgotado",
+    "categoria": "k-beauty",
+    "preco_atacado": 15.0,
+    "em_estoque": false,
+    "foto": "/_next/image?url=https%3A%2F%2Fs3.amazonaws.com%2Ftiny-anexos-us%2Ferp%2FNzY0MDEwMjYz%2F0db1c911614a15636a15195bd93ee00e.png&w=540&q=75",
+    "link_onuh": "https://catalogo.onuh.com.br/produto/ur-lifestar-portable-compressed-towel-24x30cm-kit-diario-14999",
+    "atualizado_em": "2026-11-18T12:28:19.384492"
+  },
+  {
+    "sku": "lançamento",
+    "nome": "Lançamento",
+    "marca": "Lançamento",
+    "categoria": "lancamentos",
+    "preco_atacado": 59.99,
+    "em_estoque": false,
+    "foto": "/_next/image?url=https%3A%2F%2Fs3.amazonaws.com%2Ftiny-anexos-us%2Ferp%2FNzY0MDEwMjYz%2Ff5f2f236336ab46a800c06bfb3a01a73.webp&w=540&q=75",
+    "link_onuh": "https://catalogo.onuh.com.br/produto/afnan-discovery-set-5-unidades",
+    "atualizado_em": "2026-11-18T12:29:48.424659"
+  }
+]
