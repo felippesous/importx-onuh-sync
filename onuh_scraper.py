@@ -1,7 +1,7 @@
 """
-ImportX - Robô Onuh V5.2 - LOG AO VIVO
-Correção de preço: Agora ele extrai os preços visíveis na tela e pega o menor deles
-(que corresponde ao preço de atacado), ignorando o preço de varejo do JSON-LD.
+ImportX - Robô Onuh V5.3 - LOG AO VIVO
+Correção cirúrgica: Extrai preços apenas nas proximidades do título do produto,
+evitando pegar preços de produtos relacionados no rodapé da página.
 """
 import json, csv, re, os, time, html, sys
 try:
@@ -65,11 +65,17 @@ def extract_jsonld(page):
 
 def parse_price_text(txt):
     vals = []
+    txt = txt.replace('\n', ' ')
     for m in re.finditer(r"R\$\s*([\d\.]+,\d{2})", txt or ""):
         try:
+            # Verifica se o preço é de parcelamento (ex: 12x de R$ 15,00)
+            start = max(0, m.start() - 20)
+            context = txt[start:m.start()].lower()
+            if re.search(r'\d+x\s*(de|sem)', context) or 'vezes' in context:
+                continue # Ignora parcelamentos
+                
             v = float(m.group(1).replace(".","").replace(",","."))
-            # Considera apenas preços acima de R$ 50 para evitar pegar preços de amostras/frete
-            if 50 <= v <= 5000: vals.append(v)
+            if 40 <= v <= 5000: vals.append(v)
         except: pass
     return vals
 
@@ -150,23 +156,36 @@ def run():
                     if isinstance(offers, list) and offers: offers = offers[0]
                     nome = jl.get("name") or fix_nome(link)
                     
-                    # === CORREÇÃO DE PREÇO AQUI ===
+                    # === EXTRAÇÃO CIRÚRGICA DE PREÇO ===
                     preco = None
                     try:
-                        # Pega todo o texto da área principal
-                        txt_pagina = page.locator("main").inner_text(timeout=3000)
-                        vals = parse_price_text(txt_pagina)
+                        # Pega o texto de elementos que contém R$ e estão perto do título (<h1>)
+                        txt_precos = page.evaluate("""() => {
+                            const h1 = document.querySelector('h1');
+                            if (!h1) return '';
+                            const els = Array.from(document.querySelectorAll('*')).filter(el => {
+                                return el.children.length === 0 && el.innerText && el.innerText.includes('R$');
+                            });
+                            if (!els.length) return '';
+                            const h1Rect = h1.getBoundingClientRect();
+                            els.sort((a, b) => {
+                                const aRect = a.getBoundingClientRect();
+                                const bRect = b.getBoundingClientRect();
+                                return Math.abs(aRect.top - h1Rect.bottom) - Math.abs(bRect.top - h1Rect.bottom);
+                            });
+                            return els.slice(0, 6).map(el => el.innerText).join(' | ');
+                        }""")
+                        vals = parse_price_text(txt_precos)
                         if vals:
-                            # Pega o MENOR preço da tela (Preço de Atacado)
-                            preco = min(vals) 
+                            preco = min(vals)
                     except: pass
                     
-                    # Fallback para JSON-LD se não achar na tela
+                    # Fallback seguro pro JSON-LD se não achar perto do título
                     if preco is None:
                         try:
                             if offers.get("price"): preco = float(str(offers.get("price")).replace(",","."))
                         except: pass
-                    # ===============================
+                    # ===================================
 
                     foto = fix_foto(jl.get("image") if isinstance(jl.get("image"), str) else (jl.get("image", [None])[0] if isinstance(jl.get("image"), list) else ""))
                     if not foto:
@@ -192,7 +211,6 @@ def run():
                     marca = next((m for m in MARCAS if m.lower() in nome.lower()), (nome.split()[0] if nome else ""))
                     sku = re.sub(r"\W+", "-", nome.lower())[:90]
                     
-                    # Adiciona os 30 no robô, para o site só exibir o valor pronto
                     preco_final = round((preco or 0) + 30, 2) if preco else None
                     
                     prod = {"link_onuh": link, "sku": sku, "nome": nome, "marca": marca, "categoria": categoria, "preco_final": preco_final, "em_estoque": em_estoque, "foto": foto, "atualizado_em": datetime.now().isoformat()}
