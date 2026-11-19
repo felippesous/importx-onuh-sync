@@ -1,22 +1,7 @@
-
 """
-ImportX - Robô Onuh V5.1 - LOG AO VIVO
-Auditoria V4 -> V5 corrigiu 7 bugs:
-[1] PREÇO: antes pegava o 1º R$ da página (podia ser "Pedido mínimo R$1.500" ou preço de produto relacionado).
-    Agora: pega do JSON-LD / __NEXT_DATA__ (dado estruturado do produto) e só usa texto como fallback com seletor de preço.
-[2] LOGIN: antes, se o cookie expirasse, ele salvava preço=None e APAGAVA os preços bons.
-    Agora: se >20% vier sem preço, ABORTA e NÃO sobrescreve produtos.json. Mantém o último bom.
-[3] ESTOQUE: antes "esgotado not in txt OR adicionar in txt" era sempre True (footer tem "Adicionar").
-    Agora: usa availability do JSON-LD (InStock/OutOfStock) + botão específico.
-[4] FOTO: antes pegava 1ª imagem com /media/ (podia ser banner/marca) e quebrava URL /_next/image?url=...
-    Agora: usa image do JSON-LD, depois img com alt == nome, depois maior imagem. Decodifica /_next/image?url=.
-[5] CATEGORIA: antes qualquer texto com "arab" virava Perfumes Árabes (descrição tem "árabe" em tudo).
-    Agora: usa category/breadcrumb do JSON-LD, senão "geral". Sem chute por palavra.
-[6] PERDA TOTAL: antes só salvava no fim; se travasse no produto 2000, perdia tudo.
-    Agora: salva checkpoint a cada 100 produtos em data/produtos_parcial.json e retoma.
-[7] SITEMAP: antes regex pegava só sitemap.xml raiz (que é índice, não tem produtos).
-    Agora: segue sitemaps aninhados recursivamente (sitemap-index -> sub-sitemaps -> produtos).
-Extras: nome preserva "100ml" (não vira "100Ml"), marca por lista conhecida, retry 2x por produto.
+ImportX - Robô Onuh V5.2 - LOG AO VIVO
+Correção de preço: Agora ele extrai os preços visíveis na tela e pega o menor deles
+(que corresponde ao preço de atacado), ignorando o preço de varejo do JSON-LD.
 """
 import json, csv, re, os, time, html, sys
 try:
@@ -36,11 +21,9 @@ COOKIES_FILE = Path("onuh_cookies.json")
 MARCAS = ["Lattafa","Afnan","Armaf","Al Haramain","Rasasi","Maison Alhambra","Al Wataniah","Fragrance World","Orientica","Paris Corner","French Avenue","Rayhaan","Maison Asrar","Arabiyat","Aurora Scents","Zimaya","Taif Al Emarat","Gulf Orchid","Khadlaj","Dumont","Bharara","Amaran","Le Chameau","Mawwal","Xerjoff","Creed","Medicube","Celimax","Jollyour","Isabelle La Belle","Al Haramain"]
 
 def fix_nome(slug):
-    # slug -> nome, preservando 100ml / 50ml / EDP / EDT
     parts = slug.split("/produto/")[-1].split("?")[0].strip("/").split("-")
     if parts and parts[-1].isdigit(): parts = parts[:-1]
     nome = " ".join(parts).strip()
-    # Title() mas corrige 100Ml -> 100ml, Edp -> EDP, Edt -> EDT
     nome = nome.title()
     nome = re.sub(r"(\d+)Ml\b", r"\1ml", nome)
     nome = nome.replace(" Edp", " EDP").replace(" Edt", " EDT").replace(" Eau De ", " Eau de ")
@@ -50,7 +33,6 @@ def fix_foto(raw):
     if not raw: return ""
     raw = raw.strip()
     if raw.startswith("/_next/image"):
-        # /_next/image?url=https%3A%2F%2F... -> decodifica o param url
         try:
             q = parse_qs(urlparse(raw).query)
             if "url" in q: raw = unquote(q["url"][0])
@@ -61,7 +43,6 @@ def fix_foto(raw):
     return raw
 
 def extract_jsonld(page):
-    """Retorna dict do JSON-LD tipo Product, se existir."""
     try:
         data = page.evaluate("""() => {
           const out = [];
@@ -87,12 +68,12 @@ def parse_price_text(txt):
     for m in re.finditer(r"R\$\s*([\d\.]+,\d{2})", txt or ""):
         try:
             v = float(m.group(1).replace(".","").replace(",","."))
-            if 3 <= v <= 5000: vals.append(v)
+            # Considera apenas preços acima de R$ 50 para evitar pegar preços de amostras/frete
+            if 50 <= v <= 5000: vals.append(v)
         except: pass
     return vals
 
 def collect_sitemap(page):
-    """Segue sitemap-index recursivamente."""
     links = set()
     to_visit = [BASE + "/sitemap.xml", BASE + "/sitemap_index.xml", BASE + "/sitemap-0.xml"]
     seen_xml = set()
@@ -104,7 +85,6 @@ def collect_sitemap(page):
             page.goto(url, wait_until="domcontentloaded", timeout=30000)
             time.sleep(1)
             content = page.content()
-            # sub-sitemaps
             for sm in re.findall(r"<loc>\s*(https://[^<]*sitemap[^<]*)\s*</loc>", content):
                 if sm not in seen_xml: to_visit.append(sm)
             for u in re.findall(r"<loc>\s*(https://catalogo\.onuh\.com\.br/produto/[^<\s\"']+)\s*</loc>", content):
@@ -130,9 +110,10 @@ def run():
             raw = os.environ.get("ONUH_COOKIES_JSON")
             if raw: ctx.add_cookies(json.loads(raw))
         page = ctx.new_page()
-        # CHECK LOGIN: vai na home e vê se aparece "Sair" ou preço com login; se não, avisa mas continua (sitemap é público)
+        
         links = collect_sitemap(page)
         print(f"Sitemap -> {len(links)} links", flush=True)
+        
         if len(links) < 100:
             print("Sitemap trouxe poucos links, usando fallback por categorias...", flush=True)
             for url in [BASE + "/", BASE + "/categoria/perfumes-arabes", BASE + "/categoria/nicho", BASE + "/categoria/k-beauty", BASE + "/categoria/skincare"]:
@@ -143,19 +124,23 @@ def run():
                     hrefs = page.evaluate("() => Array.from(document.querySelectorAll('a[href*=\"/produto/\"]')).map(a=>a.href)")
                     for h in hrefs: links.add(h.split("?")[0].rstrip("/"))
                 except Exception as e: print(f"  Fallback {url}: {e}")
+                
         print(f"Total links únicos: {len(links)}", flush=True)
         links = sorted(links)
-        # Retoma checkpoint se existir
+        
         done = {}
         if PARTIAL.exists():
             try:
                 for p in json.loads(PARTIAL.read_text(encoding="utf-8")): done[p["link_onuh"]] = p
                 print(f"Retomando checkpoint: {len(done)} já feitos", flush=True)
             except: pass
+            
         produtos = list(done.values())
+        
         for i, link in enumerate(links):
             if link in done: continue
             prod = None
+            
             for tentativa in range(2):
                 try:
                     page.goto(link, wait_until="domcontentloaded", timeout=30000)
@@ -164,19 +149,25 @@ def run():
                     offers = jl.get("offers", {}) if isinstance(jl, dict) else {}
                     if isinstance(offers, list) and offers: offers = offers[0]
                     nome = jl.get("name") or fix_nome(link)
+                    
+                    # === CORREÇÃO DE PREÇO AQUI ===
                     preco = None
                     try:
-                        if offers.get("price"): preco = float(str(offers.get("price")).replace(",","."))
+                        # Pega todo o texto da área principal
+                        txt_pagina = page.locator("main").inner_text(timeout=3000)
+                        vals = parse_price_text(txt_pagina)
+                        if vals:
+                            # Pega o MENOR preço da tela (Preço de Atacado)
+                            preco = min(vals) 
                     except: pass
+                    
+                    # Fallback para JSON-LD se não achar na tela
                     if preco is None:
-                        # Fallback: preço dentro de elemento de preço, não do body inteiro
-                        txt_preco = ""
-                        for sel in ["[data-price]", "[class*='price']", "[class*='Price']", "main"]:
-                            try:
-                                txt_preco = page.locator(sel).first.inner_text(timeout=1500)
-                                vals = parse_price_text(txt_preco)
-                                if vals: preco = vals[0]; break
-                            except: continue
+                        try:
+                            if offers.get("price"): preco = float(str(offers.get("price")).replace(",","."))
+                        except: pass
+                    # ===============================
+
                     foto = fix_foto(jl.get("image") if isinstance(jl.get("image"), str) else (jl.get("image", [None])[0] if isinstance(jl.get("image"), list) else ""))
                     if not foto:
                         try:
@@ -186,39 +177,52 @@ def run():
                               return hit ? hit.src : '';
                             }""", nome))
                         except: pass
+                        
                     avail = str(offers.get("availability","")).lower()
                     if "instock" in avail: em_estoque = True
                     elif "outofstock" in avail: em_estoque = False
                     else:
                         body = page.inner_text("main") if True else ""
                         em_estoque = ("esgotado" not in body.lower()) and ("indispon" not in body.lower())
+                        
                     categoria = "geral"
                     if isinstance(jl, dict) and jl.get("category"): categoria = str(jl.get("category")).lower().replace(" ","-")
                     elif isinstance(jl, dict) and jl.get("breadcrumb"): categoria = str(jl.get("breadcrumb"))[:50]
+                    
                     marca = next((m for m in MARCAS if m.lower() in nome.lower()), (nome.split()[0] if nome else ""))
                     sku = re.sub(r"\W+", "-", nome.lower())[:90]
+                    
+                    # Adiciona os 30 no robô, para o site só exibir o valor pronto
                     preco_final = round((preco or 0) + 30, 2) if preco else None
+                    
                     prod = {"link_onuh": link, "sku": sku, "nome": nome, "marca": marca, "categoria": categoria, "preco_final": preco_final, "em_estoque": em_estoque, "foto": foto, "atualizado_em": datetime.now().isoformat()}
                     break
                 except Exception as e:
                     print(f"  Tentativa {tentativa+1} falhou {link}: {e}"); time.sleep(2, flush=True)
+                    
             if prod:
                 produtos.append(prod); done[link] = prod
+                
             if (len(produtos) % 100 == 0 and produtos):
                 PARTIAL.write_text(json.dumps(produtos, ensure_ascii=False, indent=2), encoding="utf-8")
                 print(f"  Checkpoint {len(produtos)}/{len(links)} - último: {produtos[-1]['nome']} - R$ {produtos[-1].get('preco_final')}", flush=True)
+                
         browser.close()
-    # TRAVA DE SEGURANÇA [2]: não sobrescreve se muitos preços vieram vazios (cookie expirado)
+        
     sem_preco = sum(1 for p in produtos if not p.get("preco_final"))
     print(f"\nTotal: {len(produtos)} | Sem preço: {sem_preco} ({round(sem_preco/max(1,len(produtos))*100,1)}%)", flush=True)
+    
     if produtos and sem_preco / len(produtos) > 0.20:
         print("ABORTADO: mais de 20% sem preço - provável cookie expirado. Mantendo produtos.json antigo.", flush=True)
         PARTIAL.write_text(json.dumps(produtos, ensure_ascii=False, indent=2), encoding="utf-8")
         return
+        
     print(f"Salvando produtos.json com {len(produtos)} produtos", flush=True)
     produtos_publico = [{k:v for k,v in pp.items() if k not in ("link_onuh",)} for pp in produtos]
     OUT_JSON.write_text(json.dumps(produtos_publico, ensure_ascii=False, indent=2), encoding="utf-8")
+    
     if PARTIAL.exists(): PARTIAL.unlink()
+    
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f); w.writerow(["link","nome","preco_ontem","preco_hoje","variacao_R$","status"])
         for p in produtos:
@@ -226,6 +230,7 @@ def run():
             var = round(pn-po,2) if po and pn else ""
             status = "NOVO" if not old else ("SUBIU" if isinstance(var,(int,float)) and var>0 else "CAIU" if isinstance(var,(int,float)) and var<0 else "IGUAL")
             w.writerow([p["link_onuh"], p["nome"], po, pn, var, status])
+            
     print("Salvo produtos.json + variacao_precos.csv", flush=True)
 
 if __name__ == "__main__":
