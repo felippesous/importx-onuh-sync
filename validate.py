@@ -6,7 +6,7 @@ Exit 0 = ok | Exit 1 = inválido (aborta o commit).
 import json, sys, os
 from datetime import datetime, timezone
 
-MIN_PRODUTOS = 10               # ajuste ao tamanho real do catálogo
+MIN_PRODUTOS = 200               # ajuste ao tamanho real do catálogo
 CAMPOS_OBRIGATORIOS = ("nome",)
 
 def main(path="data/produtos.json"):
