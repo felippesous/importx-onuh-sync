@@ -147,7 +147,8 @@ def run():
         links = sorted(links)
         import os as _os
         if _os.environ.get('TESTE_RAPIDO') == '1':
-            links = [l for l in links if 'asad' in l.lower() or 'afnan-9-am' in l.lower()][:10]
+            # Só perfumes Asad / Asad Elixir / Afnan 9AM Dive - sem body splash, hidratante ou kit
+            links = [l for l in links if ('asad' in l.lower() or 'afnan-9-am-dive' in l.lower()) and 'body-splash' not in l.lower() and 'hidratante' not in l.lower() and 'conjunto' not in l.lower() and 'collection' not in l.lower()][:10]
             print(f'TESTE RAPIDO: {len(links)} links apenas', flush=True)
         # Retoma checkpoint se existir
         done = {}
@@ -202,7 +203,13 @@ def run():
                             if vals_todos:
                                 # Usa o MENOR preço candidato do container do produto (kit/relacionado costuma ser maior)
                                 # Se houver apenas 1, usa ele. Se houver vários, usa o menor, não o primeiro.
-                                preco = min(vals_todos)
+                                # CORRIGIDO: usa o preço MAIS FREQUENTE, não o menor.
+                                # O preço do produto principal se repete várias vezes na página (título, botão, resumo).
+                                # Preço de relacionado aparece 1x. O menor era de relacionado.
+                                from collections import Counter as _Counter
+                                _cont = _Counter(vals_todos)
+                                preco = _cont.most_common(1)[0][0]
+                                print(f"  Preço escolhido (mais frequente): R$ {preco} de {vals_todos}", flush=True)
                         except Exception as e:
                             print(f"  Fallback de preco falhou {link}: {e}", flush=True)
                     foto = fix_foto(jl.get("image") if isinstance(jl.get("image"), str) else (jl.get("image", [None])[0] if isinstance(jl.get("image"), list) else ""))
