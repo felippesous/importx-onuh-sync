@@ -4,99 +4,99 @@
     "nome": "Afnan 9 Am Dive EDP 100ml",
     "marca": "Afnan",
     "categoria": "geral",
-    "preco_final": 89.99,
+    "preco_final": 259.99,
     "em_estoque": true,
     "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/a2b01d11da3f7aeed872705631420d66.jpg",
-    "atualizado_em": "2026-11-25T22:52:21.594041"
+    "atualizado_em": "2026-11-25T22:57:35.211595"
   },
   {
     "sku": "afnan-9-am-dive-kit-3-unidades",
     "nome": "Afnan 9 Am Dive Kit 3 Unidades",
     "marca": "Afnan",
     "categoria": "geral",
-    "preco_final": 89.99,
+    "preco_final": 259.99,
     "em_estoque": true,
     "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/4c81a9d2e92f8764e99fe05336505bb7.webp",
-    "atualizado_em": "2026-11-25T22:52:22.456763"
+    "atualizado_em": "2026-11-25T22:57:36.240673"
   },
   {
-    "sku": "afnan-9-am-edp-100ml",
-    "nome": "Afnan 9 Am EDP 100ml",
-    "marca": "Afnan",
+    "sku": "lattafa-asad-body-spray-200ml",
+    "nome": "Lattafa Asad Body Spray 200ml",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 89.99,
+    "preco_final": 239.99,
     "em_estoque": false,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/876f2e8d3e7f723a1e22d61400ed25f5.jpg",
-    "atualizado_em": "2026-11-25T22:52:23.442889"
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/98c2889fb3c0242c2f2f2fcb1a2d4d9e.png",
+    "atualizado_em": "2026-11-25T22:57:37.324179"
   },
   {
-    "sku": "afnan-9-am-pour-femme-edp-100ml",
-    "nome": "Afnan 9 Am Pour Femme EDP 100ml",
-    "marca": "Afnan",
+    "sku": "lattafa-asad-bourbon-body-spray-200ml",
+    "nome": "Lattafa Asad Bourbon Body Spray 200ml",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 89.99,
+    "preco_final": 239.99,
     "em_estoque": false,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/6e327e8595b20ad766df3cebf4a8aa3b.png",
-    "atualizado_em": "2026-11-25T22:52:24.413094"
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/6c021792da53be09e3b2abe647ae58b7.jpg",
+    "atualizado_em": "2026-11-25T22:57:38.293131"
   },
   {
-    "sku": "conjunto-asad-collection-4x25ml",
-    "nome": "Conjunto Asad Collection 4X25ml",
-    "marca": "Conjunto",
+    "sku": "lattafa-asad-bourbon-edp-100ml",
+    "nome": "Lattafa Asad Bourbon EDP 100ml",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 189.99,
+    "preco_final": 239.99,
+    "em_estoque": true,
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/21bed0e611fdd14acb1c811a4f9d044b.webp",
+    "atualizado_em": "2026-11-25T22:57:39.258607"
+  },
+  {
+    "sku": "lattafa-asad-bourbon-gift-set-kit-3-unidades-100ml",
+    "nome": "Lattafa Asad Bourbon Gift Set Kit 3 Unidades 100ml",
+    "marca": "Lattafa",
+    "categoria": "geral",
+    "preco_final": 239.99,
     "em_estoque": false,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/b01b45a5a2752434c92770bbbcc1c875.webp",
-    "atualizado_em": "2026-11-25T22:52:25.478618"
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/fb05d1feadda3cd028a933d73cb705c8.webp",
+    "atualizado_em": "2026-11-25T22:57:40.343852"
   },
   {
-    "sku": "isabelle-la-belle-asad-body-splash-300ml",
-    "nome": "Isabelle La Belle Asad Body Splash 300ml",
-    "marca": "Isabelle La Belle",
+    "sku": "lattafa-asad-edp-100ml",
+    "nome": "Lattafa Asad EDP 100ml",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 84.99,
+    "preco_final": 239.99,
     "em_estoque": true,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/981cf115f27eee9186ea6a3fcb1983a5.png",
-    "atualizado_em": "2026-11-25T22:52:26.432976"
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/c72c174507e32bb0526bdf1473fdf329.jpg",
+    "atualizado_em": "2026-11-25T22:57:41.317551"
   },
   {
-    "sku": "isabelle-la-belle-asad-bourbon-body-splash-300ml",
-    "nome": "Isabelle La Belle Asad Bourbon Body Splash 300ml",
-    "marca": "Isabelle La Belle",
+    "sku": "lattafa-asad-edp-100ml-asad-zanzibar-edp-100ml-kit",
+    "nome": "Lattafa Asad EDP 100ml Asad Zanzibar EDP 100ml Kit",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 84.99,
-    "em_estoque": true,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/f6de10fb4c5d1f9fb3d51e017fb49444.jpg",
-    "atualizado_em": "2026-11-25T22:52:27.383298"
+    "preco_final": 239.99,
+    "em_estoque": false,
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/a464372854bb04eabafe847f3d6e82fb.png",
+    "atualizado_em": "2026-11-25T22:57:42.311915"
   },
   {
-    "sku": "isabelle-la-belle-asad-elixir-body-splash-300ml",
-    "nome": "Isabelle La Belle Asad Elixir Body Splash 300ml",
-    "marca": "Isabelle La Belle",
+    "sku": "lattafa-asad-elixir-edp-100ml",
+    "nome": "Lattafa Asad Elixir EDP 100ml",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 84.99,
+    "preco_final": 239.99,
     "em_estoque": true,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/8cc4e6b545ad84465138077e9c13ac9f.webp",
-    "atualizado_em": "2026-11-25T22:52:28.349450"
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/44fc34600881ac2c7f625795b2ba085a.jpg",
+    "atualizado_em": "2026-11-25T22:57:43.167302"
   },
   {
-    "sku": "isabelle-la-belle-asad-zanzibar-body-splash-300ml",
-    "nome": "Isabelle La Belle Asad Zanzibar Body Splash 300ml",
-    "marca": "Isabelle La Belle",
+    "sku": "lattafa-asad-kit-3-unidades",
+    "nome": "Lattafa Asad Kit 3 Unidades",
+    "marca": "Lattafa",
     "categoria": "geral",
-    "preco_final": 84.99,
-    "em_estoque": true,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/b6f715d82aa72ff65611fd2a1f58f38e.jpg",
-    "atualizado_em": "2026-11-25T22:52:29.351257"
-  },
-  {
-    "sku": "isabelle-la-belle-hidratante-corporal-asad-200gr-pote",
-    "nome": "Isabelle La Belle Hidratante Corporal Asad 200Gr Pote",
-    "marca": "Isabelle La Belle",
-    "categoria": "geral",
-    "preco_final": 84.99,
-    "em_estoque": true,
-    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/2f22316f1058bb25c15e58d909c7514e.png",
-    "atualizado_em": "2026-11-25T22:52:30.196902"
+    "preco_final": 239.99,
+    "em_estoque": false,
+    "foto": "https://s3.amazonaws.com/tiny-anexos-us/erp/NzY0MDEwMjYz/42e73785fd9b983fadbb5fb3fad526ee.webp",
+    "atualizado_em": "2026-11-25T22:57:44.158980"
   }
 ]
