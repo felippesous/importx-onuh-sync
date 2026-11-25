@@ -1,0 +1,13 @@
+PASSO A PASSO - 5 MINUTOS
+1. GitHub > seu repo importx-onuh-sync > Add file > Upload files
+2. Arraste TODOS os arquivos deste zip (incluindo a pasta .github)
+3. Clique em Commit changes (marque Replace / sobrescrever se pedir)
+4. Vá em Actions > Sincronizar Onuh -> ImportX > Run workflow
+   - Em "teste_rapido" escolha TRUE para testar em 3 min
+   - Clique em Run workflow
+5. Espera 3 min, abre o log e procura:
+   - VALIDACAO OK
+   - TESTE RAPIDO
+   - Asad - R$ 194.99
+6. Se estiver certo, roda de novo com teste_rapido = FALSE para rodar completo.
+PRONTO. Não precisa mexer em mais nada.
