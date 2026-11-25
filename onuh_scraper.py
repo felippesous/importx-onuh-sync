@@ -29,6 +29,11 @@ from playwright.sync_api import sync_playwright
 
 BASE = "https://catalogo.onuh.com.br"
 OUT_JSON = Path("data/produtos.json")
+# TESTE_RAPIDO salva em arquivo separado, NUNCA sobrescreve o catálogo completo
+import os as _os2
+if _os2.environ.get("TESTE_RAPIDO") == "1":
+    OUT_JSON = Path("data/produtos_teste.json")
+    OUT_CSV = Path("data/variacao_teste.csv")
 OUT_CSV = Path("data/variacao_precos.csv")
 PARTIAL = Path("data/produtos_parcial.json")
 COOKIES_FILE = Path("onuh_cookies.json")
@@ -130,7 +135,16 @@ def run():
             raw = os.environ.get("ONUH_COOKIES_JSON")
             if raw: ctx.add_cookies(json.loads(raw))
         page = ctx.new_page()
-        # CHECK LOGIN: vai na home e vê se aparece "Sair" ou preço com login; se não, avisa mas continua (sitemap é público)
+        # CHECK LOGIN: se não estiver logado, o preço vem de visitante (mais caro) e NÃO é o preço de lojista
+        try:
+            page.goto(BASE + "/", wait_until="domcontentloaded", timeout=30000); time.sleep(2)
+            txt_home = page.inner_text("body")[:3000].lower()
+            logado = ("sair" in txt_home or "minha conta" in txt_home or "olá" in txt_home)
+            print(f"LOGIN Onuh: {'LOGADO ✅' if logado else 'NÃO LOGADO ❌ - cookie expirado! Preços virão de visitante, NÃO use para o site!'}", flush=True)
+            if not logado:
+                print("AÇÃO: refaça salvar_login.py e atualize o Secret ONUH_COOKIES_JSON", flush=True)
+        except Exception as e:
+            print(f"Check login falhou: {e}", flush=True)
         links = collect_sitemap(page)
         print(f"Sitemap -> {len(links)} links", flush=True)
         if len(links) < 100:
@@ -148,7 +162,7 @@ def run():
         import os as _os
         if _os.environ.get('TESTE_RAPIDO') == '1':
             # Só perfumes Asad / Asad Elixir / Afnan 9AM Dive - sem body splash, hidratante ou kit
-            links = [l for l in links if ('asad' in l.lower() or 'afnan-9-am-dive' in l.lower()) and 'body-splash' not in l.lower() and 'hidratante' not in l.lower() and 'conjunto' not in l.lower() and 'collection' not in l.lower()][:10]
+            links = [l for l in links if ('asad' in l.lower() or 'afnan-9-am-dive' in l.lower()) and all(x not in l.lower() for x in ['body-splash','body-spray','hidratante','conjunto','collection','kit','gift-set','zanzibar'])][:10]
             print(f'TESTE RAPIDO: {len(links)} links apenas', flush=True)
         # Retoma checkpoint se existir
         done = {}
