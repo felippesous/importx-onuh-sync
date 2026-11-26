@@ -23,8 +23,8 @@ jobs:
       ONUH_PASSWORD: ${{ secrets.ONUH_PASSWORD }}
       TESTE_RAPIDO: ${{ inputs.teste_rapido == 'true' && '1' || '0' }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6.1.0
+      - uses: actions/setup-python@v6.3.0
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
