@@ -1,0 +1,27 @@
+PASSO A PASSO - 5 MINUTOS (VERSAO CORRIGIDA)
+1. GitHub > seu repo importx-onuh-sync > Add file > Upload files
+2. Arraste TODOS os arquivos desta pasta, incluindo:
+   - .github/workflows/sync-onuh.yml
+   - .gitignore
+   - onuh_auth.py  (NOVO)
+   - testar_login.py  (NOVO)
+   - onuh_scraper.py, salvar_login.py, validate.py, requirements.txt, README.md
+   NAO suba onuh_cookies.json nem onuh_storage.json (o .gitignore bloqueia).
+3. GitHub > Settings > Secrets and variables > Actions > New repository secret:
+   - Nome: ONUH_STORAGE_STATE_JSON
+     Valor: conteudo inteiro do arquivo onuh_storage.json
+   - Opcional (renovacao automatica): ONUH_EMAIL e ONUH_PASSWORD
+4. Actions > Sincronizar Onuh -> ImportX > Run workflow
+   - teste_rapido = true
+5. No log, confira:
+   - VALIDACAO OK
+   - TESTE DE COOKIES: OK
+   - LOGADO como: Felippe
+   - Asad ... R$ 164.99  -> final 194.99 (preco pode variar; sempre +30)
+6. Se der OK, rode novamente com teste_rapido = false (catalogo completo).
+
+SE O TESTE DE COOKIES FALHAR:
+- Rode salvar_login.py no seu PC, faca login na janela NOVA do Chromium,
+  aperte ENTER e copie o novo onuh_storage.json para o Secret ONUH_STORAGE_STATE_JSON.
+- Ou configure ONUH_EMAIL + ONUH_PASSWORD para o robo renovar sozinho.
+PRONTO.
