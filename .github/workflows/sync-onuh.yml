@@ -1,0 +1,44 @@
+name: Sincronizar Onuh -> ImportX
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      teste_rapido:
+        description: 'Teste rapido (3 produtos, nao sobrescreve o catalogo)?'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      ONUH_STORAGE_STATE_JSON: ${{ secrets.ONUH_STORAGE_STATE_JSON }}
+      ONUH_STORAGE_JSON: ${{ secrets.ONUH_STORAGE_JSON }}
+      ONUH_COOKIES_JSON: ${{ secrets.ONUH_COOKIES_JSON }}
+      ONUH_EMAIL: ${{ secrets.ONUH_EMAIL }}
+      ONUH_PASSWORD: ${{ secrets.ONUH_PASSWORD }}
+      TESTE_RAPIDO: ${{ inputs.teste_rapido == 'true' && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: Validar codigo antes de rodar
+        run: python validate.py
+      - name: Testar cookies / login Onuh
+        run: python testar_login.py
+      - name: Rodar robo
+        run: python onuh_scraper.py
+      - name: Commit produtos.json
+        run: |
+          git config user.name "importx-bot"
+          git config user.email "bot@importx.local"
+          git add data/produtos.json || true
+          git diff --cached --quiet && echo "Sem alteracoes para commit" || git commit -m "sync: atualizar precos"
+          git push
