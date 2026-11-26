@@ -19,7 +19,9 @@ auth = (raiz / "onuh_auth.py").read_text(encoding="utf-8")
 teste = (raiz / "testar_login.py").read_text(encoding="utf-8")
 
 if "preco_atacado" in scraper:
-    erros.append("Ainda tem 'preco_atacado' - use preco_final")
+    erros.append("Ainda tem 'preco_atacado' - use preco_base/preco_final")
+if '"preco_base": preco' not in scraper:
+    erros.append("Falta preco_base bruto: o index.html soma R$ 30 sozinho")
 if "vals[0]" in scraper:
     erros.append("Ainda tem 'vals[0]' - fallback perigoso")
 if "link_onuh" in scraper and 'k != "link_onuh"' not in scraper:

@@ -180,9 +180,12 @@ def dados_produto(page, link):
     em_estoque = extrair_estoque(page)
     preco_final = round(preco + 30, 2) if preco is not None else None
 
+    # O index.html da ImportX tem CFG.margem = 30 e soma sozinho no preco_base.
+    # Por isso o JSON publico leva o preco BRUTO em preco_base. preco_final
+    # fica apenas como referencia para outros consumidores (ja com a margem).
     return {
         "link_onuh": link, "sku": sku, "nome": nome, "marca": marca,
-        "categoria": categoria, "preco_final": preco_final,
+        "categoria": categoria, "preco_base": preco, "preco_final": preco_final,
         "em_estoque": em_estoque, "foto": foto,
         "atualizado_em": datetime.now().isoformat(),
     }
@@ -314,6 +317,8 @@ def run():
         for p in produtos:
             anterior = antigos.get(p.get("sku"), {})
             antes = anterior.get("preco_final")
+            if antes is None and anterior.get("preco_base") is not None:
+                antes = round(anterior["preco_base"] + 30, 2)
             agora = p["preco_final"]
             variacao = round(agora - antes, 2) if antes and agora else ""
             status = ("NOVO" if not anterior else

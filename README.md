@@ -8,7 +8,9 @@ Robô que lê os preços de lojista do catálogo da Onuh e publica no site com *
 - `onuh_scraper.py` — varredura do sitemap, leitura dos preços e geração de `data/produtos.json` + `data/variacao_precos.csv`.
 - `salvar_login.py` — rode **no seu PC** para gerar a sessão e copiar para o Secret.
 
-## Configuração no GitHub (repo privado)
+## Configuração no GitHub
+
+> O repo precisa estar **público** para o `index.html` conseguir ler o JSON via `raw.githubusercontent.com`. Os Secrets ficam criptografados e não são expostos.
 1. Rode `salvar_login.py` no seu computador, faça login na janela do Chromium que abrir e aperte ENTER.
 2. GitHub > Settings > Secrets and variables > Actions > New repository secret:
    - `ONUH_STORAGE_STATE_JSON` = conteúdo **inteiro** de `onuh_storage.json` (recomendado; contém cookies + localStorage).
@@ -33,5 +35,7 @@ Preco final no site apos margem: R$ 194.99
 ## Regras
 - Repo **sempre privado**.
 - Nunca subir `onuh_cookies.json`, `onuh_storage.json` nem `data/.onuh_auth_state.json` — o `.gitignore` já bloqueia. Use Secrets.
-- Só `preco_final` vai para o site; `link_onuh` é removido do JSON público.
+- O `index.html` da ImportX tem `CFG.margem = 30` e **soma R$ 30 sozinho**. Por isso o JSON público leva o preço bruto da Onuh em `preco_base` (o site transforma 164,99 em 194,99). O campo `preco_final` (já com margem) fica apenas como referência para outros consumidores.
+- `link_onuh` é removido do JSON público.
+- O site carrega `https://raw.githubusercontent.com/felippesous/importx-onuh-sync/main/data/produtos.json` — esse URL só funciona se o repositório estiver **público**. Se o repo estiver privado, o site não carrega o catálogo.
 - Se mais de 20% dos produtos ficarem sem preço, o robô aborta e mantém o `produtos.json` anterior.

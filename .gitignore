@@ -1,0 +1,16 @@
+# Credenciais / sessao - NUNCA subir para o GitHub
+onuh_cookies.json
+onuh_storage.json
+data/.onuh_auth_state.json
+
+# Resultados intermediarios
+data/produtos_parcial.json
+data/produtos_parcial_teste.json
+data/*.invalido.json
+data/produtos_teste.json
+data/variacao_teste.csv
+data/variacao_precos.csv
+
+# Python
+__pycache__/
+*.pyc
